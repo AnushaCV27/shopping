@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="topbar"><img src="https://images.indianexpress.com/2021/01/myntra.png" alt="">
+    <div class="men"> MEN </div>
+    <div class="women"> WOMEN </div>
+    <div class= "kids"> KIDS </div>
+    <div class="homeliving"> HOME & LIVING </div>
+    <div class= "beauty"> BEAUTY </div>
+    <div class="form-group has-search" aria-hidden="true">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWMRGLWMj8RZ7tgDaenALL2z9POt2xTTahCiArs2E6SfeqvlfgmJHm4dwOYHyL2QDCD40&usqp=CAU" alt=""/>
+      <span class= "fa fa-search fa_custom"></span>  
+      <input placeholder="Search for products, brands and more" type="any" class="form-control" [(ngModel)] = "filteredString"/> 
+    </div>
+    <div class="profile"><img src="https://www.pngkit.com/png/full/115-1150714_avatar-single-customer-view-icon.png"> Profile </div>
+    <div class="whishlist"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe0j2e_z0F-VzQ-kPBNwC1EJNIdHWxjkgExQ&usqp=CAU" > Whishlist</div>
+    <div class="bag"><img src="https://thumbs.dreamstime.com/b/shopping-bag-icon-shopping-bag-icon-vector-illustration-white-background-129552569.jpg"> Bag</div>
+  </div>
+<div class= "main">
+  
+    <nav class="filters">
+      
+      <h4><b> FILTERS</b></h4>
+      
+      <div class="checkbox" >
+        <h5>PRICE</h5>  
+          <div *ngFor="let p of priceRange; let i=index">
+            <input [(ngModel)]="p.checked" (change)="onChange($event, p.value,i)" [value]="p.value" type="checkbox">{{p.title}}    
+          </div>
+      </div>
+      <div>
+        <h5>CATEGORIES</h5>
+        <div *ngFor="let ct of categories; let i=index">
+          <input type="checkbox" [(ngModel)] = "ct.checked" (change)="onCategory($event, ct.title, i)" >{{ct.title}}
+        <div class="color"></div>
+        </div>
+      </div>
+      <div>
+        <h5> COLOR</h5>
+        <div *ngFor="let c of color; let i= index">
+          <input [(ngModel)]= 'c.checked' (change)="onColor($event, c.title,i)" [value]='c.title' type="checkbox"> {{c.title}}
+        </div>
+      </div>
+      
+      <div>
+        <h5>RATING</h5>
+        <div *ngFor = "let r of RatingRange; let i =index" >
+          <input type="checkbox" name ="r"  [(ngModel)]="r.checked"  (change) ="onclick($event, r.value, i)" [value] = "r.value"   >{{r.title}} <span class="pink"></span> 
+        </div>
+      </div>
+    </nav>
+    
+  
+
+  
+    <ul class="content" >
+      
+      <div *ngFor="let item of products| filter: filteredString | price: prc | rating: rate | color: clr" type="none" >
+          <nav class="container" >
+            <div class= "column"><img src = {{item.image}}  /></div>
+            <div class="column"><b>{{item.title}}</b>
+            <div class="description">{{item.description}}</div>
+            <span class="pce"><b>Rs. {{item.pricedrop}}    </b></span> <span class="strick">  Rs.{{item.price}}</span><span class="off"> (Rs.{{item.off}} OFF) </span>
+            <div class="rating">{{item.rating.rate}} <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNfRLbKqZKUJnWzbHwOvXHhibHi4gj6hB3S6m3pUaWrV4nTNK52NhL58Y726etrvaRORA&usqp=CAU"></div>
+             <!--p>{{item.description}}</p-->
+            </div>
+          </nav>
+      </div>
+    </ul>
+  
+</div>  
+</body>
+</html>
+
+
+ <!--h3>Best Offer available!</h3-->
+
+<!--div *ngFor = "let r of RatingRange; let i = index" >
+      <label> 
+        <input type="checkbox"  [(ngModel)]="ratings" [checked] = "i.isChecked" (click) ='onclick(r, i)' [value] ="r.value"  >{{r.title}}
+      </label>
+    </div-->
+
+<!--         <input type="checkbox"  [(ngModel)]="ratings"  (change) ="onclick($event, r.value)" [value] = "r.value" [disabled]="isChecked && (isCheckedName != r)"  >{{r.title}}
+-->
+
+
+
+
