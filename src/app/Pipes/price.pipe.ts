@@ -25,7 +25,9 @@ export class PricePipe implements PipeTransform {
       else if(prices === '15389-22944' && product.pricedrop > 15389 && product.pricedrop <22944 || prices === '7834-15389' && product.pricedrop > 7834 && product.pricedrop <15389){
       products.push(product);
       }
-      //else if(prices === ' ' && product.pricedrop > 15389 && product.pricedrop <22944 || prices === '7834-15389' && product.pricedrop > 7834 && product.pricedrop <15389){
+      else if(prices === ' '){
+      products.push(product);
+      }
 
 
   }

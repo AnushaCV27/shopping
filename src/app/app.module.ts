@@ -3,10 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FilterPipe } from './Pipes/filter.pipe';
-import { PricePipe } from './Pipes/price.pipe';
-import { RatingPipe } from './Pipes/rating.pipe';
-import { ColorPipe } from './Pipes/color.pipe';
+import { LoginModule } from './login/login.module';
+import { HomeModule } from './home/home.module';
+import { BuyModule } from './buy/buy.module';
 //import {fas} from '@fortawesome/free-solid-svg-icons';
 
 
@@ -14,16 +13,15 @@ import { ColorPipe } from './Pipes/color.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    FilterPipe,
-    PricePipe,
-    RatingPipe,
-    ColorPipe,
-    
+      
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    LoginModule,
+    HomeModule,
+    BuyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

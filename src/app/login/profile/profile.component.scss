@@ -1,0 +1,62 @@
+.pbody:hover{
+    width: 250px;
+    left: -137.5px;
+    top: 62px;
+    position: absolute;
+    padding: 25px 20px 15px;
+    z-index: 9;
+    -webkit-box-shadow: 0 1px 10px rgb(0 0 0 / 8%);
+    box-shadow: 0 1px 10px rgb(0 0 0 / 8%);
+    -webkit-transition: opacity .2s ease-out,visibility .2s ease-out;
+    transition: opacity .2s ease-out,visibility .2s ease-out;
+    background-color: #fff;
+    color: #3e4152;
+    border: 1px solid #f5f5f6;
+    visibility: hidden;
+    opacity: 0;
+    margin: -2px 0;
+    .content {
+        display: block;
+        padding-bottom: 2px;
+        .email, .welcome {
+            font-size: 14px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 10px;
+        }
+        .welcome {
+            font-weight: 500;
+            height: 20px;
+        }
+        .email {
+            height: 14px;
+            color: #282c3f;
+        }
+    }
+    
+}   
+    // *, :after, :before{
+    //     box-sizing:inherit;
+    // }
+    
+
+
+
+
+
+
+
+// .desktop-userActionsArrow {
+//     display: block;
+//     top: -5px;
+//     position: absolute;
+//     width: 58px;
+//     border-bottom: 4px solid #f16565;
+//     left: 124px;
+// }
+
+// div{
+//     display: block;
+// }

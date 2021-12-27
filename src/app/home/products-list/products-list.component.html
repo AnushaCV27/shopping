@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div class= "main">
+  
+    <nav class="filters">
+      
+      <h4><b> FILTERS</b></h4>
+      
+      <div class="checkbox" >
+        <h5>PRICE</h5>  
+          <div *ngFor="let p of priceRange; let i=index">
+            <input [(ngModel)]="p.checked" (change)="onChange($event, p.value,i)" [value]="p.value" type="checkbox">{{p.title}}    
+          </div>
+      </div>
+      <div>
+        <h5>CATEGORIES</h5>
+        <div *ngFor="let ct of categories; let i=index">
+          <input type="checkbox" [(ngModel)] = "ct.checked" (change)="onCategory($event, ct.title, i)" >{{ct.title}}
+        <div class="color"></div>
+        </div>
+      </div>
+      <div>
+        <h5> COLOR</h5>
+        <div *ngFor="let c of color; let i= index">
+          <input [(ngModel)]= 'c.checked' (change)="onColor($event, c.title,i)" [value]='c.title' type="checkbox"> {{c.title}}
+        </div>
+      </div>
+      
+      <div>
+        <h5>RATING</h5>
+        <div *ngFor = "let r of RatingRange; let i =index" >
+          <input type="checkbox" name ="r"  [(ngModel)]="r.checked"  (change) ="onclick($event, r.value, i)" [value] = "r.value"   >{{r.title}} <span class="pink"></span> 
+        </div>
+      </div>
+    </nav>
+    
+  
+
+  
+    <ul class="content" >
+      
+      <div *ngFor="let item of products| filter: filteredString | price: prc | rating: rate | color: clr" type="none" >
+          <nav class="container" >
+            <div class= "column"><img src = {{item.image}}  /></div>
+            <div class="column"><b>{{item.title}}</b>
+            <div class="description">{{item.description}}</div>
+            <span class="pce"><b>Rs. {{item.pricedrop}}    </b></span> <span class="strick">  Rs.{{item.price}}</span><span class="off"> (Rs.{{item.off}} OFF) </span>
+            <div class="rating">{{item.rating.rate}} <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNfRLbKqZKUJnWzbHwOvXHhibHi4gj6hB3S6m3pUaWrV4nTNK52NhL58Y726etrvaRORA&usqp=CAU"></div>
+             <!--p>{{item.description}}</p-->
+            </div>
+          </nav>
+      </div>
+    </ul>
+  
+</div> 

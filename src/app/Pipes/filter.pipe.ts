@@ -1,5 +1,6 @@
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Pipe, PipeTransform } from '@angular/core';
+import { HeaderComponent } from '../home/header/header.component';
 
 @Pipe({
   name: 'filter',

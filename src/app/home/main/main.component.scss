@@ -1,0 +1,26 @@
+.sale{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+
+    img{
+        width: 24rem;
+        height: 10rem;
+    }
+}
+.winter{
+    img{
+        width: 90rem;
+        text-align: center;
+    }
+}
+.collections{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    
+    img{
+        width:17.5rem;
+        height: 22rem;
+        padding-bottom: 1rem;
+    }
+}
